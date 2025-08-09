@@ -1,0 +1,75 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+*.so
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+.envrc
+*.egg-info/
+pip-wheel-metadata/
+
+# Environment variable files
+.env
+*.env
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# IDE settings
+.vscode/
+.idea/
+*.code-workspace
+
+# macOS & system files
+.DS_Store
+Thumbs.db
+
+# Logs and debug files
+*.log
+*.out
+
+# Python packaging
+build/
+dist/
+
+# Testing and coverage
+.coverage
+htmlcov/
+.tox/
+.nox/
+.pytest_cache/
+coverage.xml
+
+# ChromaDB vector store directory
+chromadb/
+
+# Project-specific data folder
+data/
+
+# LangChain or custom output/log folders
+lc_logs/
+output/
+
+# Docker-related
+*.pid
+docker-compose.override.yml
+
+# Linting and typing tools
+.mypy_cache/
+.pyre/
+.pytype/
+pylint-report.txt
+
+# Node.js (if any frontend used)
+node_modules/
+package-lock.json
+
+# DVC (if used)
+.dvc/
