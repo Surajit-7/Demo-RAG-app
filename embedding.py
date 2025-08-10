@@ -9,28 +9,28 @@ load_dotenv()
 
 documents = load_docs()
 
-# openaiKey = os.getenv("OPENAI-KEY")
+# openaiKey = os.getenv("OPENAI-KEY") -> to test if openai api key is imported or not
 
 # print(openaiKey)
+def do_embedding():
+
+    embedding = OpenAIEmbeddings(model='text-embedding-3-small')
+
+    # store = Chroma.from_documents(documents=documents,embedding=embedding, persist_directory='./chromadb' ) 
+    # store.persist() -> -> run this only the first time ; it will create files under the path mentioned in persist_directory
 
 
-embedding = OpenAIEmbeddings(model='text-embedding-3-small')
+    load_to_disk = Chroma(persist_directory='./chromadb', embedding_function=embedding)
 
-# store = Chroma.from_documents(documents=documents,embedding=embedding, persist_directory='./chromadb' )
+    
 
-# store.persist()
+    query = 'what is TCP congestion control'
 
-load_to_disk = Chroma(persist_directory='./chromadb', embedding_function=embedding)
+    ans = load_to_disk.similarity_search(query=query, k = 3)
 
-# retriever = load_to_disk.as_retriever()
+    
 
-query = 'what is TCP congestion control'
+    return ans, query
 
-ans = load_to_disk.similarity_search(query=query, k = 3)
-
-for docs in ans:
-    print(docs.page_content)
-
-# print(ans)
 
 
